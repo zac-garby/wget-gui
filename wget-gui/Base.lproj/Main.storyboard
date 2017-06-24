@@ -299,7 +299,7 @@
                                             <size key="minSize" width="910" height="554"/>
                                             <size key="maxSize" width="970" height="10000000"/>
                                             <attributedString key="textStorage">
-                                                <fragment content="The content of the external file will be here">
+                                                <fragment content="The content of the file will be here">
                                                     <attributes>
                                                         <font key="NSFont" metaFont="smallSystem"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
