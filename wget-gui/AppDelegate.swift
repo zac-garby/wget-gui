@@ -15,8 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ n: Notification) {
     let app = n.object as? NSApplication
     
-    if let splitController = app?.mainWindow?.contentViewController as! NSSplitViewController? {
-      mainViewController = splitController.childViewControllers[0] as? ViewController
+    if let viewController = app?.mainWindow?.contentViewController as! ViewController? {
+      mainViewController = viewController
     }
   }
 
