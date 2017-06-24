@@ -42,7 +42,7 @@ class ViewController: NSViewController {
       return
     }
     
-    let url = URL(string: textField.stringValue)
+    let url = URL(string: textField.stringValue.replacingOccurrences(of: " ", with: "\\ "))
     let request = URLRequest(url: url!)
     let session = URLSession.shared
     
@@ -75,8 +75,6 @@ class ViewController: NSViewController {
   }
   
   func onGetData(data: Data?, response: URLResponse?, error: Error?) -> Void {
-    var code = 0
-    
     if error != nil {
       infoLabel.stringValue = ""
       set(text: error?.localizedDescription as String?, isError: true)
@@ -84,16 +82,14 @@ class ViewController: NSViewController {
     }
 
     var serverName: String? = nil
+    var statusCode: Int? = nil
     
     if let httpResponse = response as? HTTPURLResponse {
-      code = httpResponse.statusCode
+      statusCode = httpResponse.statusCode
       
       if let server = httpResponse.allHeaderFields["Server"] {
         serverName = server as? String
       }
-    } else {
-      set(text: "An unknown error occured (2)", isError: true)
-      return
     }
     
     var encoding = String.Encoding.utf8
@@ -104,11 +100,14 @@ class ViewController: NSViewController {
     
     var info = "\(data?.count ?? 0) bytes"
     info += ", \(response?.mimeType ?? "")"
-    info += ", status \(code)"
     info += ", \(encoding.description)"
     
-    if serverName != nil {
-      info += ", \(serverName!) server"
+    if let code = statusCode {
+      info += ", status \(code)"
+    }
+    
+    if let server = serverName {
+      info += ", \(server) server"
     }
     
     infoLabel.stringValue = info
