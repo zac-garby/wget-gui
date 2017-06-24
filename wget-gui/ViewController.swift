@@ -151,6 +151,16 @@ class ViewController: NSViewController {
     })
   }
   
+  public func save() {
+    do {
+      if let str = self.output.string {
+        try str.write(to: URL(string: textField.stringValue)!, atomically: false, encoding: .utf8)
+      }
+    } catch {
+      saveAs()
+    }
+  }
+  
   @IBAction func openInBrowser(_ sender: NSButton) {
     if let url = URL(string: textField.stringValue) {
       NSWorkspace.shared().open(url)

@@ -55,6 +55,11 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
+                                        <menuItem title="Save" keyEquivalent="s" id="ZwY-bu-mKb">
+                                            <connections>
+                                                <action selector="saveClicked:" target="Voe-Tx-rLC" id="W7T-wJ-aH1"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Save As…" keyEquivalent="S" id="Bw7-FT-i3A">
                                             <connections>
                                                 <action selector="saveAsClicked:" target="Voe-Tx-rLC" id="7tq-XP-gE9"/>
@@ -292,7 +297,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="910" height="554"/>
-                                            <size key="maxSize" width="912" height="10000000"/>
+                                            <size key="maxSize" width="970" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="The content of the external file will be here">
                                                     <attributes>

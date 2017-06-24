@@ -20,6 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Insert code here to tear down your application
   }
   
+  @IBAction func saveClicked(_ sender: NSMenuItem) {
+    if let vc = app?.mainWindow?.contentViewController as! ViewController? {
+      vc.save()
+    }
+  }
+  
   @IBAction func saveAsClicked(_ sender: NSMenuItem) {
     if let vc = app?.mainWindow?.contentViewController as! ViewController? {
       vc.saveAs()
