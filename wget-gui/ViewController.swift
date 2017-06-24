@@ -19,16 +19,12 @@ class ViewController: NSViewController {
   @IBOutlet weak var infoLabel: NSTextField!
   @IBOutlet weak var finalURLDisplay: NSTextField!
   
-  override func viewDidAppear() {
-    self.view.window?.titlebarAppearsTransparent = true
-    self.view.window?.isMovableByWindowBackground = true
-    self.view.window?.backgroundColor = .white
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+        
+    output.textContainerInset = NSSize(width: 10, height: 10)
     output.font = NSFont.userFixedPitchFont(ofSize: 13)
+    
     infoLabel.stringValue = ""
     finalURLDisplay.stringValue = ""
     

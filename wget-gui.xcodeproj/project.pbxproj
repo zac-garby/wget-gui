@@ -291,6 +291,7 @@
 				12BC2A571EFD60A0007CDCCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
