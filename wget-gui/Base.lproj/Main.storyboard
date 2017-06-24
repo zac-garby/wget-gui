@@ -327,10 +327,10 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43m-Wu-cAx">
-                                <rect key="frame" x="18" y="14" width="512" height="22"/>
+                                <rect key="frame" x="18" y="14" width="642" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="0LT-Hm-Y5n"/>
-                                    <constraint firstAttribute="width" constant="508" id="OsZ-HJ-2yA"/>
+                                    <constraint firstAttribute="width" constant="638" id="OsZ-HJ-2yA"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="n bytes, text/html, status 200" id="ypR-5j-ctZ">
                                     <font key="font" size="13" name="Menlo-Bold"/>
