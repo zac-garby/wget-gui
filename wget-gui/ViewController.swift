@@ -75,6 +75,8 @@ class ViewController: NSViewController {
   }
   
   func onGetData(data: Data?, response: URLResponse?, error: Error?) -> Void {
+    output.isEditable = false
+    
     if error != nil {
       infoLabel.stringValue = ""
       set(text: error?.localizedDescription as String?, isError: true)
@@ -90,6 +92,8 @@ class ViewController: NSViewController {
       if let server = httpResponse.allHeaderFields["Server"] {
         serverName = server as? String
       }
+    } else {
+      output.isEditable = true
     }
     
     var encoding = String.Encoding.utf8
