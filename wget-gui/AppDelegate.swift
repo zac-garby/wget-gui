@@ -10,26 +10,26 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-  var app: NSApplication? = nil
+  var mainViewController: ViewController? = nil
   
   func applicationDidFinishLaunching(_ n: Notification) {
-    app = n.object as? NSApplication
+    let app = n.object as? NSApplication
+    
+    if let splitController = app?.mainWindow?.contentViewController as! NSSplitViewController? {
+      mainViewController = splitController.childViewControllers[0] as? ViewController
+    }
   }
 
   func applicationWillTerminate(_ n: Notification) {
-    // Insert code here to tear down your application
+    
   }
   
   @IBAction func saveClicked(_ sender: NSMenuItem) {
-    if let vc = app?.mainWindow?.contentViewController as! ViewController? {
-      vc.save()
-    }
+    mainViewController?.save()
   }
   
   @IBAction func saveAsClicked(_ sender: NSMenuItem) {
-    if let vc = app?.mainWindow?.contentViewController as! ViewController? {
-      vc.saveAs()
-    }
+    mainViewController?.saveAs()
   }
 }
 
